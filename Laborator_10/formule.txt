@@ -1,0 +1,22 @@
+========= Reduction ========= (pasii sunt puteri ale lui 2)
+    send:   - cine? (rank % (2 * i)) == i
+            - cui? (rank - i)
+
+    recv:   - cine? (rank % 2 * i) == 0
+            - de la cine? (rank + i)
+
+========= Scan ========= (pasii sunt puteri ale lui 2)
+ * procesul k trimite procesului (k + i)
+
+    send:   - cui? (rank + i)
+            - cine? (rank + i) < n
+            
+    recv:   - de la cine? (rank - i)
+            - cine? (rank - i) >= 0
+            
+========= Pipeline Poli==========
+    sendTo:   r + 1
+    sum += coefR * x ^ rank
+    recvFrom:   r - 1
+
+    
